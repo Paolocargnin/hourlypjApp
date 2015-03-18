@@ -7,6 +7,10 @@ angular.module('hourlyPjApp', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize'
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       })
+      .when('/projects', {
+        templateUrl: 'app/main/main.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -1,21 +1,29 @@
-<div layout-fill>
+<md-list>
+  <md-item ng-repeat="client in clients">
+    <md-item-content>
+      <div class="md-tile-left">
+        <md-button class="md-fab md-primary"><h2 class="nomargin">{{client.name[0]}}</h2> </md-button>
+      </div>
+      <div class="md-tile-content">
+        <h3>{{client.name}}</h3>
+        <h4><a href="" ng-click="deleteClient(client._id)">Delete</a></h4>
+        <p>
+          {{client.note}}
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+</md-list>
 
-  <header ng-include="'components/navbar/navbar.html'"></header>
+<form ng-submit="addClient()">
+  <md-input-container>
+    <label>Client name</label>
+    <input type="text" ng-model="newClient.name" placeholder="Client name">
+  </md-input-container>
 
-  <md-content>
-
-    <div class="techs" layout-align="center">
-      vecchio
-      <section ng-repeat="client in clientsObj.clients">
-        <pre>{{client||json}}</pre>
-      </section>
-    </div>
-  </md-content>
-
-  <footer>
-    <md-toolbar layout="row" layout-align="center center">
-      <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
-    </md-toolbar>
-  </footer>
-
-</div>
+  <md-input-container>
+    <label>Note</label>
+    <textarea ng-model="newClient.note"></textarea>
+  </md-input-container>
+  <md-button type="material" class="md-fab"><i class="fa fa-cloud-upload"></i></md-button>
+</form>

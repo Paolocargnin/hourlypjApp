@@ -7,15 +7,14 @@ angular.module('hourlyPjApp').
       apiUrl: apiUrl,
       clients: $resource(apiUrl+'/clients/:clientId',
         {
-          isArray: true,
           clientId:'@clientId'
         },
         {
-          // charge: {
-          //   method:'POST', 
-          //   params:{
-          //   }
-          // }
+          create: {
+            method:'PUT', 
+            // params:{
+            // }
+          }
         })
     }
 

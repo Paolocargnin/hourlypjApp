@@ -4,8 +4,8 @@ html {
   font-family: 'Roboto Slab', serif;
 }
 
-[layout=row] {
-  flex-direction: row;
+.nomargin{
+  margin:0!important
 }
 
 .browsehappy {
@@ -15,43 +15,28 @@ html {
   padding: 0.2em 0;
 }
 
-.thumbnail {
-  height: 200px;
+.slide-animate.ng-enter, .slide-animate.ng-leave{
+ -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+   -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+ }
 
-  img.pull-right {
-    width: 50px;
-  }
+
+.slide-animate.ng-enter.ng-enter-active {
+ position: absolute;
+ left: 1300px;
 }
 
-md-toolbar.md-default-theme {
-  background-color: black;
+.slide-animate.ng-enter {
+ left: 0;
 }
 
-section.jumbotron {
-  margin-bottom: 30px;
-  padding: 1px 30px;
-  background-color: #5aadbb;
-  text-align: center;
+.slide-animate.ng-leave.ng-leave-active {
+ position: absolute;
+ left: -1700px;
+ }
 
-  color: white;
-
-  h1 {
-    font-size: 3em;
-  }
-}
-
-.techs {
-  display: flex;
-  flex-flow: row wrap;
-
-  md-card {
-    width: 30%;
-
-    img.pull-right {
-      float: right;
-      width: 50px;
-    }
-  }
-}
-// injector
-// endinjector
+.slide-animate.ng-leave {
+ right: 0;
+ }
