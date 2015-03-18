@@ -1,21 +1,25 @@
-<div class="list client-list">
+<div class="list project-list">
   <section class="md-whiteframe-z1" ng-repeat="client in clients">
     <form ng-submit="updateClient(client)">
-      <md-toolbar class="md-hue-2">
-        <div class="md-toolbar-tools" layout>
-          <i class="fa fa-user"></i>
-          <md-input-container flex>
+      <md-toolbar class="md-hue-2" layout layout-margin>
+        <div class="md-toolbar-tools">
+          <i class="fa fa-user fa-2x"></i>
+          <md-input-container flex="50">
+            <label>Name</label>
             <input type="text" ng-model="client.name">
+          </md-input-container>
+          <md-input-container flex="30">
+            <label>Amount</label>
+            <input type="text" ng-model="client.amount">
           </md-input-container>
         </div>
       </md-toolbar>
-      <md-button type="button" class="md-fab md-primary md-save">
-        <h2 class="nomargin">{{client.projects.length | json}}</h2>
-      </md-button>
-      <md-input-container>
-        <label>Note</label>
-        <textarea  rows="1" ng-model="client.note"></textarea>
-      </md-input-container>
+      <div flex>
+        <md-input-container>
+          <label>Note</label>
+          <textarea  rows="1" ng-model="client.note"></textarea>
+        </md-input-container>
+      </div>
       <md-button type="button" class="md-delete md-raised md-warn" ng-click="deleteClient(client._id)">
         <i class="fa fa-trash"></i> Delete
       </md-button>

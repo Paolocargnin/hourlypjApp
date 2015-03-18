@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('hourlyPjApp')
-  .controller('MainCtrl', ['$scope', 'hourlyPj',
+  .controller('ProjectCtrl', ['$scope', 'hourlyPj',
   function ($scope, hourlyPj) {
-    $scope.objectApi= 'clients';
+    $scope.objectApi= 'projects';
 
     $scope.getClients= function(){
       hourlyPj.objects.query({object:$scope.objectApi}).$promise.then(function(data) {
@@ -14,10 +14,10 @@ angular.module('hourlyPjApp')
     $scope.getClients();
 
     $scope.addClient= function(){
-		hourlyPj.objects.save(_.extend({object:$scope.objectApi},$scope.newClient)).$promise.then(function(data) {
+    hourlyPj.objects.save(_.extend({object:$scope.objectApi},$scope.newClient)).$promise.then(function(data) {
         $scope.clients.push($scope.newClient);
         $scope.newClient={};
-	    });    	
+      });     
     }
 
     $scope.deleteClient = function(id){

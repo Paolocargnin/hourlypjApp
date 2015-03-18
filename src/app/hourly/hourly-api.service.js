@@ -2,15 +2,17 @@
 
 angular.module('hourlyPjApp').
   factory('hourlyPj', [ '$resource', function($resource) {
-    var apiUrl= 'http://localhost:3000';
+    var apiUrl= 'http://192.168.0.164:3000';
+    // var apiUrl= 'http://localhost:3000';
     return {
       apiUrl: apiUrl,
-      clients: $resource(apiUrl+'/clients/:clientId',
+      objects: $resource(apiUrl+'/:object/:clientId',
         {
+          object: '@object',
           clientId:'@clientId'
         },
         {
-          create: {
+          edit: {
             method:'PUT', 
             // params:{
             // }

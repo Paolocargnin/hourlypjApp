@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
 
 html {
-  font-family: 'Roboto Slab', serif;
+  // font-family: 'Roboto Slab', serif;
 }
 
 .nomargin{
@@ -40,3 +40,42 @@ html {
 .slide-animate.ng-leave {
  right: 0;
  }
+
+ .client-list{
+}
+
+.project-list{
+}
+
+.list{
+  md-toolbar{
+    color:#fff !important;
+    label,
+    .md-input{
+      color:#fff !important;
+    } 
+  }
+  md-input-container{
+    padding-bottom:0;
+  }
+  >*{
+  margin:30px 0;
+    position: relative;
+  }
+  button.md-save{
+    position: absolute;
+    top:40px;
+    z-index: 90;
+    right:10px;
+  }
+  button.md-delete {
+    position: absolute;
+    top:50px;
+    right:80px;
+    z-index: 90;
+  }
+}
+.body-app{
+  width:98%;
+  margin:auto;
+}
